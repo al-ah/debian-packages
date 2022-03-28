@@ -1,0 +1,13 @@
+https://www.rabbitmq.com/install-debian.html#apt-packagecloud
+
+https://packagecloud.io/rabbitmq/rabbitmq-server/packages/debian/bullseye/rabbitmq-server_3.8.27-1_all.deb
+
+
+
+curl -s https://packagecloud.io/install/repositories/rabbitmq/rabbitmq-server/script.deb.sh | sudo bash
+rm -rf /var/cache/apt/archives/*
+sudo apt-get install  --download-only  rabbitmq-server=3.8.27-1
+dpkg -i /var/cache/apt/archives/*.deb
+
+
+copy /var/cache/apt/archives/* files 

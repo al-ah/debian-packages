@@ -1,0 +1,16 @@
+https://kifarunix.com/install-zeek-on-debian-11/
+
+
+rm -rf /var/cache/apt/archives/*
+
+apt update && apt install --download-only curl gnupg2
+echo 'deb http://download.opensuse.org/repositories/security:/zeek/Debian_11/ /' > /etc/apt/sources.list.d/zeek.list
+curl -fsSL https://download.opensuse.org/repositories/security:zeek/Debian_11/Release.key | gpg --dearmor > /etc/apt/trusted.gpg.d/security_zeek.gpg
+apt update
+apt-cache policy zeek
+sudo apt-get install  --download-only  zeek
+
+dpkg -i /var/cache/apt/archives/*.deb
+
+
+copy /var/cache/apt/archives/* files 
